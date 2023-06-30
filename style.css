@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+
+button {
+    font: inherit;
+}
+
+p,
+h2 {
+    overflow-wrap: break-word;
+}
+
+:root {
+    --bright-orange: 31 77% 52%;
+    --clr-bright-orange: hsl(31 77% 52%);
+    --dark-cyan: 184 100% 22%;
+    --clr-dark-cyan: hsl(184 100% 22%);
+    --very-dark-cyan: 179 100% 13%;
+    --clr-very-dark-cyan: hsl(179 100% 13%);
+    --transparent-grey: 0 0% 100%/0.75;
+    --clr-transparent-grey: hsl(0 0% 100%/0.75);
+    --very-light-grey: 0 0% 95%;
+    --clr-very-light-grey: hsl(0 0% 95%);
+}
+
+/* Sizes */
+:root {
+    --size-0: 0;
+    --size-200: 0.75rem;
+    --size-300: 0.825rem;
+    --size-400: 1rem;
+    --size-500: 1.25rem;
+    --size-600: 1.5rem;
+    --size-700: 1.75rem;
+    --size-800: 2rem;
+    --size-850: 2.5rem;
+    --size-900: 3rem;
+}
+
+/* Font Sizes */
+:root {
+    --fs-0: var(--size-0);
+    --fs-200: var(--size-200);
+    --fs-300: var(--size-300);
+    --fs-400: var(--size-400);
+    --fs-500: var(--size-500);
+    --fs-600: var(--size-600);
+    --fs-700: var(--size-700);
+    --fs-800: var(--size-800);
+    --fs-850: var(--size-850);
+    --fs-900: var(--size-900);
+
+    /* Font Family */
+    --ff-heading: 'Big Shoulders Display', cursive;
+    --fw-bold:700;
+    --ff-default: 'Lexend Deca', sans-serif;
+    --fw-regular: 400;
+}
+
+
+/****** Composition ******/
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: var(--ff-default);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+}
+
+.component {
+    max-width: 22rem;
+    margin-inline: var(--size-600);
+}
+
+
+
+/* Layout */
+.grid {
+    display: grid;
+}
+.grid-flow {
+    display: grid;
+    gap: var(--size-600);
+}
+.grid-center {
+    place-content: center;
+}
+
+.three-columns{
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+@media (width > 1000px) {
+    .component {
+        max-width: none;
+    }
+    .card{
+        max-width: 22rem;
+    }
+    .three-columns{
+        grid-template-rows: none;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .grid-flow {
+        display: grid;
+        gap: var(--size-800);
+    }
+}
+/**** Utilities ****/
+/* Colors */
+.bg-bright-orange {
+    background-color: var(--clr-bright-orange);
+}
+
+.bg-dark-cyan {
+    background-color: var(--clr-dark-cyan);
+}
+
+.bg-very-dark-cyan {
+    background-color: var(--clr-very-dark-cyan);
+}
+
+.bg-very-light-grey {
+    background-color: var(--clr-very-light-grey);
+}
+
+.text-bright-orange {
+    color: var(--clr-bright-orange);
+}
+
+.text-dark-cyan {
+    color: var(--clr-dark-cyan);
+}
+
+.text-very-dark-cyan {
+    color: var(--clr-very-dark-cyan);
+}
+
+.text-transparent-grey {
+    color: var(--clr-transparent-grey);
+}
+
+.text-very-light-grey {
+    color: var(--clr-very-light-grey);
+}
+
+/* Paddings */
+
+.padding-900 {
+    padding: var(--size-900);
+}
+
+.padding-y-300 {
+    padding-top: var(--size-300);
+    padding-bottom: var(--size-300);
+}
+
+.padding-x-700 {
+    padding-left: var(--size-700);
+    padding-right: var(--size-700);
+}
+
+/* Margins */
+
+.margin-y-900 {
+    margin-block: var(--size-900);
+}
+
+/* Font Sizes */
+
+.fs-400 {
+    font-size: var(--fs-400);
+}
+.fs-850 {
+    font-size: var(--fs-850);
+}
+
+.ff-heading{
+    font-family: var(--ff-heading);
+}
+.fw-bold{
+    font-weight: var(--fw-bold);
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.capsule {
+    border-radius: 100vh;
+}
+.border-radius-0_5 {
+    border-radius: var(--size-200);
+}
+
+/* Block */
+.btn{
+    display: inline-block;
+    width: fit-content;
+    text-decoration: none;
+    border:2px solid var(--clr-very-light-grey);
+    transition: background-color 300ms cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+.btn:hover{
+    background-color: transparent;
+    color:var(--clr-very-light-grey);
+}
+@media (width > 1000px) {
+    .btn{
+        margin-top: var(--size-900);
+    }
+}
